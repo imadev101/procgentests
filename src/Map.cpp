@@ -97,6 +97,5 @@ void Map::render(SDL_Renderer *renderer, int xPosRender, int yPosRender)
 
 bool Map::canWalk(int x, int y)
 {
-    //std::cout << "canWalk(" << x << ", " << y << ")" << std::endl;
-    return ((tiles[y][x]==' ')||(tiles[y][x]=='.')||(tiles[y][x]=='o'));
+
 }

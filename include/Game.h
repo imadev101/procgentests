@@ -6,7 +6,7 @@
 
 // predeclaration
 class Map;
-class Player;
+class Entity;
 
 
 class Game
@@ -28,7 +28,10 @@ class Game
         SDL_Event event;
 
         Map *map;
-        Player *player;
+        Entity *entity;
+
+        static const int MAP_WIDTH = 640;
+        static const int MAP_HEIGHT = 480;
 
     protected:
 
