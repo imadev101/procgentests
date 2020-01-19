@@ -4,7 +4,7 @@
 #include "Game.h"
 #include <bits/stdc++.h>
 
-class Entity
+class OldEntity
 {
     public:
         static int static_id;
@@ -18,13 +18,13 @@ class Entity
         int mana = 1000;
         int pxSize = 30;
 
-        Entity* children[10] = {NULL};
+        OldEntity* children[10] = {NULL};
         int nbChildren = 0;
         int depth = 0;
 
-        Entity();
+        OldEntity();
         //Entity(Game *game);
-        virtual ~Entity();
+        virtual ~OldEntity();
 
         void render(SDL_Renderer *renderer);
         void setPosition(int x, int y);

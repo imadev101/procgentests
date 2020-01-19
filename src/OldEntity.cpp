@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "OldEntity.h"
 #include<stdlib.h>
 #include<time.h>
 
@@ -9,9 +9,9 @@
 const int SPROUT_CHANCE = 20; // 20% each frame
 const int SPEED_FACTOR = 6; // -6 to +6 vector in x and y
 
-int Entity::static_id = 0;
+int OldEntity::static_id = 0;
 
-Entity::Entity()
+OldEntity::OldEntity()
 {
     //ctor
     id = ++static_id;
@@ -24,12 +24,12 @@ Entity::Entity()
     yVel = rand() % (2*SPEED_FACTOR) - SPEED_FACTOR;
 }
 
-Entity::~Entity()
+OldEntity::~OldEntity()
 {
     //dtor
 }
 
-void Entity::init()
+void OldEntity::init()
 {
     // random spawn
     // random position
@@ -37,7 +37,7 @@ void Entity::init()
     // random direction
 }
 
-void Entity::move()
+void OldEntity::move()
 {
     // using modulo allow to round up around map
     int testX = (xPos+xVel)%Game::MAP_WIDTH;
@@ -54,7 +54,7 @@ void Entity::move()
     yPos = testY;
 }
 
-void Entity::render(SDL_Renderer *renderer)
+void OldEntity::render(SDL_Renderer *renderer)
 {
     int multiplier = 1;
     SDL_Rect eRect;
@@ -77,7 +77,7 @@ void Entity::render(SDL_Renderer *renderer)
 
 }
 
-void Entity::update()
+void OldEntity::update()
 {
     srand(SDL_GetTicks()+static_id*100);
     //std::cout << "2 Seeding srand with  SDLGT = " << SDL_GetTicks() << std::endl;
@@ -103,13 +103,13 @@ void Entity::update()
     }
 }
 
-void Entity::sprout()
+void OldEntity::sprout()
 {
     // some checks here?
     spawn();
 }
 
-void Entity::spawn()
+void OldEntity::spawn()
 {
     int manaCost = rand() % 50;
 
@@ -125,7 +125,7 @@ void Entity::spawn()
        // std::cout << "Spawning " << number << " entities..." << std::endl;
         for (int i = 0; i < number; i++)
         {
-            Entity* e = new Entity();
+            OldEntity* e = new OldEntity();
             e->init();
 
             e->id = id + nbChildren + 10*depth;
@@ -155,7 +155,7 @@ void Entity::spawn()
         mana -= manaCost;
     }
 }
-void Entity::setPosition(int x, int y)
+void OldEntity::setPosition(int x, int y)
 {
     xPos = x;
     yPos = y;

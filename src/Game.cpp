@@ -1,12 +1,12 @@
 #include "Game.h"
-#include "Entity.h"
+#include "OldEntity.h"
 #include <iostream>
 
 
 SDL_Renderer* Game::renderer = nullptr;
 
 //Entity entities[10];
-Entity entity;
+OldEntity entity;
 
 Game::Game()
 {
@@ -34,7 +34,7 @@ void Game::init(const char* title, int width, int height)
     // create a renderer
     renderer = SDL_CreateRenderer(window, -1, 0);
 
-    entity = new Entity();
+    entity = new OldEntity();
     entity->init();
 
     std::cout << "Genesis " << ": x=" << entity->xPos << " / y=" << entity->yPos

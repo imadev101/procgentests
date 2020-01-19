@@ -25,25 +25,6 @@ int main(int arg, char* args[])
         return 0;
     }
 
-/*
-    //start of spiral drawer
-    window = SDL_CreateWindow("Spiral Drawer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-
-    if (window == NULL)
-    {
-        std::cout << "SDL Error :" << SDL_GetError() << std::endl;
-        isRunning = false;
-    }
-
-    // create a renderer
-    renderer = SDL_CreateRenderer(window, -1, 0);
-    //the seed/first drawer, acts as the parent of all other drawers
-    SpiralDrawer seed=new SpiralDrawer(0,0,0,renderer);
-
-    SDL_RenderPresent(renderer);
-
-    SDL_Delay(5000);
-*/
     // initialize game
     std::cout << "Just testing procedurally drawn stuff here" << std::endl;
     game = new Game();
