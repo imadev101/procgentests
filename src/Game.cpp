@@ -1,12 +1,11 @@
 #include "Game.h"
-#include "TextureManager.h"
-#include "Map.h"
 #include "Entity.h"
 #include <iostream>
 
+
 SDL_Renderer* Game::renderer = nullptr;
 
-Entity entities[10];
+//Entity entities[10];
 Entity entity;
 
 Game::Game()
